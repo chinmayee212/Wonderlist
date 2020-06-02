@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <button mat-icon-button (click)="toggleSideBar()">
+          <mat-icon>menu</mat-icon>
+      </button>
+
+      <span>Wonder List</span>
+
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+          <ul fxLayout="row" fxLayoutGap="20px">
+            <li>
+              <button  class="m-3 btn btn-sm btn-success"  routerLinkActive="list-item-active" routerLink="/add">New Task</button>
+            </li>
+
+          </ul>
+      </div>
+  </mat-toolbar-row>
+</mat-toolbar>

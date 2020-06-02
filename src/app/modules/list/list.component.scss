@@ -1,0 +1,72 @@
+.stats-cards {
+  .mat-card {
+    overflow: hidden;
+  }
+}
+
+table {
+  width: 100%;
+}
+.card-counter i{
+  font-size: 5em;
+  opacity: 0.2;
+}
+
+.card-counter .count-numbers{
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 32px;
+  display: block;
+}
+
+.card-counter .count-name{
+  position: absolute;
+  right: 35px;
+  top: 65px;
+  font-style: italic;
+  text-transform: capitalize;
+  opacity: 0.5;
+  display: block;
+  font-size: 18px;
+}
+
+
+.card-counter.orange{
+  background-color: #c26417;
+  color: #FFF;
+}
+.card-counter.green{
+  background-color: green;
+  color: #FFF;
+}
+.card-counter.purple{
+  background-color: purple;
+  color: #FFF;
+}
+.card-counter.grey{
+  background-color: grey;
+  color: #FFF;
+}
+#customers {
+
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}

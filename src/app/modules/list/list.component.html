@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<br>
+	<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+		<mat-card fxFlex="25">
+			<div class="card-counter orange">
+				<i class="fa fa-medkit"></i>
+				<span class="count-numbers"> {{this.personal}}</span>
+				<span class="count-name">Personal</span>
+			</div>
+		</mat-card>
+		<mat-card fxFlex="25">
+			<div class="card-counter green">
+				<i class=" fa fa-snowflake-o "></i>
+				<span class="count-numbers"> {{this.shopping}}</span>
+				<span class="count-name">Shopping</span>
+			</div>
+		</mat-card>
+		<mat-card fxFlex="25">
+			<div class="card-counter grey">
+				<i class="fa fa-address-book"></i>
+				<span class="count-numbers"> {{this.work}}</span>
+				<span class="count-name">Work</span>
+			</div>
+		</mat-card>
+		<mat-card fxFlex="25">
+			<div class="card-counter purple">
+				<i class="fa fa-globe"></i>
+				<span class="count-numbers"> {{this.others}}</span>
+				<span class="count-name">Others</span>
+			</div>
+		</mat-card>
+	</div>
+	<br>
+		<br>
+			<mat-divider></mat-divider>
+			<br>
+				<div class="col-md-12">
+					<div class="input-group mb-3">
+						<input
+      type="text"
+      class="form-control"
+      placeholder="Search by title"
+      [(ngModel)]="title"
+    />
+						<div class="input-group-append">
+							<button
+        class="btn btn-outline-secondary"
+        type="button"
+        (click)="searchTitle()"
+      >
+        Search
+      </button>
+						</div>
+					</div>
+				</div>
+				<!-- <span><button class="m-3 btn btn-sm btn-danger" (click)="removeAllTask()">Remove All</button></span> -->
+				<br>
+					<mat-divider></mat-divider>
+					<br>
+						<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+							<div fxFlex="100">
+								<div class="mat-elevation-z8">
+									<table class="table table-bordered" id="customers">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Title</th>
+												<th>Description</th>
+												<th>Status</th>
+												<th>DueDate</th>
+												<th>Label</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr *ngFor ="let res of result ; let i = index"
+              [class.active]="i == currentIndex"
+              (click)="setActiveTask(res, i)">
+												<th>{{res.id}}</th>
+												<td>{{res.title}}</td>
+												<td>{{res.description | slice:0:20}}</td>
+												<td>{{res.status ? "Completed":"InProgress"}}</td>
+												<td>{{res.duedate | date:'dd-MMM-yyyy'}}</td>
+												<td>{{res.label}}</td>
+												<td>
+													<a class="m-3 btn btn-sm btn-danger" href="/detail/{{ res.id }}">
+                  Edit
+              </a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
